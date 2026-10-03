@@ -1,18 +1,39 @@
+<div align="center">
+
 # Sorted
 
-A daily ranking puzzle. Every day you get one category and five entries, like *Planets, by diameter* or *Movies, by release year*. Put them in the right order in three tries.
+**Five things. Three tries. One right order.**
 
-**[Play it here →](https://sharmishtha-b.github.io/sorted/)**
+A daily ranking puzzle on a glossy 3D board.
 
-## How to play
+[**▶ Play today's puzzle**](https://sharmishtha-b.github.io/sorted/)
 
-- Tap two blocks to swap them (or drag one onto another), then hit **Lock in**.
-- After each try, every block tells you something:
-  - ✓ green: right place
-  - ▲ coral: belongs higher
-  - ▼ coral: belongs lower
-- It never tells you *how far* to move. That part is logic.
-- Everyone gets the same puzzle each day. Finish it and share your result without spoilers:
+![Three.js](https://img.shields.io/badge/three.js-r128-1d2131?style=flat-square)
+![No build step](https://img.shields.io/badge/build-none-36c08a?style=flat-square)
+![100 puzzles](https://img.shields.io/badge/puzzles-100-e9b949?style=flat-square)
+![License: MIT](https://img.shields.io/badge/license-MIT-f2705a?style=flat-square)
+
+<img src="docs/preview.jpg" alt="Sorted mid-game: Saturn, Neptune and Mercury marked correct in green, Mars and Earth in coral with arrows" width="340">
+
+</div>
+
+<br>
+
+## How it works
+
+Every day there's one category, like *Planets, by diameter* or *Bollywood films, by release year*, and five entries to rank. Gold medal at the top.
+
+Swap blocks around, hit **Lock in**, and each block tells you something:
+
+| | |
+|:-:|---|
+| ✅ | Right place. Leave it. |
+| 🔼 | Belongs higher. |
+| 🔽 | Belongs lower. |
+
+It never tells you *how far* to move. You get three tries.
+
+When you're done, share your result without spoilers:
 
 ```
 Sorted #001 · 2/3
@@ -21,26 +42,51 @@ Planets, by diameter
 🟩🟩🟩🟩🟩
 ```
 
-## Features
+## What's inside
 
-- Real-time 3D board built with Three.js: glossy blocks, gold/silver/bronze medals, swap and flip animations, confetti on a win
-- New puzzle every day at midnight, picked deterministically from the date
-- Stats saved in the browser: games played, win %, current and best streak, and a distribution of tries per win
-- Bonus rounds for when one puzzle a day isn't enough
-- Works on desktop and mobile; keyboard players can press two number keys (1–5) to swap ranks
+- **100 hand-picked lists** across space, geography, nature, science, food, film, music, sport, history and tech. That's over three months without a repeat.
+- **One shared puzzle a day** for everyone, with a countdown to the next one.
+- **Stats that stick:** games played, win %, current and best streak, and how many tries your wins usually take.
+- **Bonus rounds** for when one a day isn't enough.
+- **Real-time 3D:** glossy blocks, gold, silver and bronze medals, swap and flip animations, and confetti when you get it.
+- **Works everywhere:** desktop and phone. On a keyboard, press two numbers from 1 to 5 to swap those ranks.
 
-## Tech
+## Under the hood
 
-A single `index.html` file: vanilla JavaScript, CSS, and [Three.js r128](https://threejs.org/) from a CDN. No build step, no backend. Progress and stats live in `localStorage`.
+The whole game is one `index.html`: vanilla JavaScript, CSS and [Three.js](https://threejs.org/) loaded from a CDN. There's no framework, no build step and no backend.
 
-## Data
+- **Daily puzzle:** the day number is counted from launch day, then looked up in a fixed shuffle of all 100 lists. Everyone gets the same puzzle, and similar topics don't land back to back.
+- **Feedback:** each block compares its position to its true rank, so you get ✓, ▲ or ▼.
+- **Progress and stats** are kept in `localStorage`, so they live in your browser.
 
-The 20 lists use well-established figures. Values marked `~` are approximate (populations, weights, lengths and the like vary by source and year). Spot a mistake? Open an issue.
+### Run it locally
 
-## Built with AI
+```bash
+git clone https://github.com/Sharmishtha-b/sorted.git
+cd sorted
+python -m http.server 8000
+```
 
-I built this with Claude (Anthropic) as a pair programmer: I came up with the direction and made the design and gameplay calls, and iterated on the look and rules until it felt right.
+Then open http://localhost:8000.
+
+### Add a list
+
+Each puzzle is one line in the `PUZZLES` array in `index.html`, written in the correct order:
+
+```js
+{ q: 'Planets, by diameter', dir: '<b>Largest</b> gets gold', items: [['Saturn', '116,460 km'], ['Neptune', '49,244 km'], ['Earth', '12,742 km'], ['Mars', '6,779 km'], ['Mercury', '4,879 km']] },
+```
+
+A good list has five well-established values that are clearly far apart. Values marked `~` are approximate.
+
+## About the data
+
+The numbers come from widely published figures. Some things, like populations, weights and record lifespans, vary by source and year, so those are marked `~`. If you spot something off, [open an issue](https://github.com/Sharmishtha-b/sorted/issues).
+
+## Built with
+
+Made by [Sharmishtha Bharti](https://sharmishtha-portfolio.vercel.app) as a weekend side project, with Claude (Anthropic) as an AI pair programmer. I set the direction and made the design and gameplay calls; Claude helped write the code.
 
 ## License
 
-MIT
+[MIT](LICENSE)

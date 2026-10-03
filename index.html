@@ -183,8 +183,105 @@ const PUZZLES = [
   { q: 'Substances, by boiling point', dir: '<b>Hottest</b> gets gold', items: [['Iron', '~2,862 °C'], ['Table salt', '~1,465 °C'], ['Water', '100 °C'], ['Ethanol', '~78 °C'], ['Liquid nitrogen', '~−196 °C']] },
   { q: 'The adult human body, by count', dir: '<b>Most</b> gets gold', items: [['Hairs on head', '~100,000'], ['Bones', '206'], ['Teeth', '32'], ['Ribs', '24'], ['Heart chambers', '4']] },
   { q: 'Summer Olympics, by year', dir: '<b>Earliest</b> gets gold', items: [['Barcelona', '1992'], ['Sydney', '2000'], ['Beijing', '2008'], ['Rio de Janeiro', '2016'], ['Paris', '2024']] },
+  // ---- space ----
+  { q: 'Planets, by distance from the Sun', dir: '<b>Closest</b> gets gold', items: [['Venus', '~108m km'], ['Mars', '~228m km'], ['Jupiter', '~778m km'], ['Saturn', '~1.43 bn km'], ['Neptune', '~4.5 bn km']] },
+  { q: 'Planets, by time to spin once', dir: '<b>Slowest</b> gets gold', items: [['Venus', '~243 days'], ['Mercury', '~59 days'], ['Mars', '24 h 37 m'], ['Earth', '23 h 56 m'], ['Jupiter', '~10 h']] },
+  { q: 'Planets, by surface gravity', dir: '<b>Strongest pull</b> gets gold', items: [['Jupiter', '24.8 m/s²'], ['Neptune', '11.2 m/s²'], ['Saturn', '10.4 m/s²'], ['Earth', '9.8 m/s²'], ['Mars', '3.7 m/s²']] },
+  { q: 'Planets, by average temperature', dir: '<b>Hottest</b> gets gold', items: [['Venus', '~464 °C'], ['Mercury', '~167 °C'], ['Earth', '~15 °C'], ['Mars', '~−65 °C'], ['Neptune', '~−200 °C']] },
+  { q: 'Space objects, by distance from Earth', dir: '<b>Closest</b> gets gold', items: [['The Moon', '~384,400 km'], ['The Sun', '~150m km'], ['Proxima Centauri', '~4.2 light-years'], ['Betelgeuse', '~550 light-years'], ['Andromeda Galaxy', '~2.5m light-years']] },
+  { q: 'Space milestones, by year', dir: '<b>Earliest</b> gets gold', items: [['Sputnik 1', '1957'], ['Apollo 11', '1969'], ['Hubble telescope', '1990'], ['ISS first module', '1998'], ['James Webb telescope', '2021']] },
+  // ---- geography ----
+  { q: 'Countries, by area', dir: '<b>Largest</b> gets gold', items: [['Russia', '~17.1m km²'], ['Canada', '~9.98m km²'], ['Brazil', '~8.5m km²'], ['India', '~3.29m km²'], ['Germany', '~357,000 km²']] },
+  { q: 'Deserts, by area', dir: '<b>Largest</b> gets gold', items: [['Sahara', '~9.2m km²'], ['Arabian', '~2.3m km²'], ['Gobi', '~1.3m km²'], ['Kalahari', '~0.9m km²'], ['Thar', '~0.2m km²']] },
+  { q: 'Lakes, by surface area', dir: '<b>Largest</b> gets gold', items: [['Caspian Sea', '~371,000 km²'], ['Lake Superior', '~82,100 km²'], ['Lake Victoria', '~68,900 km²'], ['Lake Baikal', '~31,500 km²'], ['Lake Geneva', '~580 km²']] },
+  { q: 'Islands, by area', dir: '<b>Largest</b> gets gold', items: [['Greenland', '~2.13m km²'], ['New Guinea', '~786,000 km²'], ['Borneo', '~743,000 km²'], ['Madagascar', '~587,000 km²'], ['Great Britain', '~209,000 km²']] },
+  { q: 'Waterfalls, by height', dir: '<b>Tallest</b> gets gold', items: [['Angel Falls', '979 m'], ['Yosemite Falls', '739 m'], ['Victoria Falls', '~108 m'], ['Iguazu Falls', '~82 m'], ['Niagara Falls', '~51 m']] },
+  { q: 'Capital cities, by elevation', dir: '<b>Highest</b> gets gold', items: [['Quito', '~2,850 m'], ['Bogotá', '~2,640 m'], ['Mexico City', '~2,240 m'], ['Nairobi', '~1,795 m'], ['London', '~11 m']] },
+  { q: 'Cities, from north to south', dir: '<b>Northernmost</b> gets gold', items: [['Reykjavík', '64.1° N'], ['London', '51.5° N'], ['Rome', '41.9° N'], ['Singapore', '1.4° N'], ['Sydney', '33.9° S']] },
+  { q: 'Countries, by population density', dir: '<b>Most crowded</b> gets gold', items: [['Singapore', '~8,000 / km²'], ['Bangladesh', '~1,300 / km²'], ['India', '~490 / km²'], ['United States', '~37 / km²'], ['Australia', '~3.5 / km²']] },
+  { q: 'Countries, by year of independence', dir: '<b>Earliest</b> gets gold', items: [['United States', '1776'], ['Brazil', '1822'], ['India', '1947'], ['Singapore', '1965'], ['South Sudan', '2011']] },
+  { q: 'Countries, by highest mountain', dir: '<b>Highest peak</b> gets gold', items: [['Nepal', '8,849 m'], ['Argentina', '6,961 m'], ['Tanzania', '5,895 m'], ['Japan', '3,776 m'], ['United Kingdom', '1,345 m']] },
+  { q: 'Asian countries, by population', dir: '<b>Most people</b> gets gold', items: [['China', '~1.41 bn'], ['Indonesia', '~280m'], ['Pakistan', '~240m'], ['Japan', '~124m'], ['Singapore', '~6m']] },
+  { q: 'Indian states, by area', dir: '<b>Largest</b> gets gold', items: [['Rajasthan', '~342,000 km²'], ['Maharashtra', '~308,000 km²'], ['Uttar Pradesh', '~241,000 km²'], ['Kerala', '~38,900 km²'], ['Goa', '~3,700 km²']] },
+  { q: 'Singapore landmarks, by height', dir: '<b>Tallest</b> gets gold', items: [['Guoco Tower', '~290 m'], ['Marina Bay Sands', '~194 m'], ['Singapore Flyer', '165 m'], ['Tallest Supertree', '~50 m'], ['Merlion', '8.6 m']] },
+  { q: 'Singapore icons, by opening year', dir: '<b>Earliest</b> gets gold', items: [['Changi Airport', '1981'], ['MRT', '1987'], ['Esplanade', '2002'], ['Marina Bay Sands', '2010'], ['Jewel Changi', '2019']] },
+  // ---- nature ----
+  { q: 'Animals, by longest recorded lifespan', dir: '<b>Longest</b> gets gold', items: [['Greenland shark', '~400 years'], ['Bowhead whale', '~200 years'], ['Human', '122 years'], ['Elephant', '~70 years'], ['Dog', '~30 years']] },
+  { q: 'Animals, by pregnancy length', dir: '<b>Longest</b> gets gold', items: [['Elephant', '~22 months'], ['Giraffe', '~15 months'], ['Human', '~9 months'], ['Dog', '~2 months'], ['Mouse', '~3 weeks']] },
+  { q: 'Birds, by wingspan', dir: '<b>Widest</b> gets gold', items: [['Wandering albatross', '~3.5 m'], ['Andean condor', '~3.2 m'], ['Bald eagle', '~2.2 m'], ['Barn owl', '~1 m'], ['Hummingbird', '~0.1 m']] },
+  { q: 'Sea creatures, by length', dir: '<b>Longest</b> gets gold', items: [['Blue whale', '~30 m'], ['Whale shark', '~12–18 m'], ['Great white shark', '~6 m'], ['Bottlenose dolphin', '~3 m'], ['Clownfish', '~10 cm']] },
+  { q: 'Dinosaurs, by length', dir: '<b>Longest</b> gets gold', items: [['Argentinosaurus', '~35 m'], ['T. rex', '~12 m'], ['Triceratops', '~9 m'], ['Velociraptor', '~2 m'], ['Compsognathus', '~1 m']] },
+  { q: 'Eggs, by weight', dir: '<b>Heaviest</b> gets gold', items: [['Ostrich', '~1.4 kg'], ['Emu', '~600 g'], ['Goose', '~150 g'], ['Chicken', '~60 g'], ['Quail', '~10 g']] },
+  { q: 'Animals, by hours of sleep a day', dir: '<b>Sleepiest</b> gets gold', items: [['Koala', '~20 h'], ['Cat', '~13 h'], ['Human', '~8 h'], ['Cow', '~4 h'], ['Wild elephant', '~2 h']] },
+  // ---- the body ----
+  { q: 'Organs, by weight', dir: '<b>Heaviest</b> gets gold', items: [['Skin', '~4 kg'], ['Liver', '~1.5 kg'], ['Heart', '~300 g'], ['One kidney', '~150 g'], ['Thyroid', '~25 g']] },
+  { q: 'Bones, by length', dir: '<b>Longest</b> gets gold', items: [['Femur (thigh)', '~48 cm'], ['Tibia (shin)', '~43 cm'], ['Humerus (arm)', '~36 cm'], ['Clavicle', '~15 cm'], ['Stapes (ear)', '~3 mm']] },
+  // ---- science ----
+  { q: 'Elements, by melting point', dir: '<b>Highest</b> gets gold', items: [['Tungsten', '3,422 °C'], ['Iron', '1,538 °C'], ['Gold', '1,064 °C'], ['Lead', '327 °C'], ['Mercury', '−39 °C']] },
+  { q: 'Elements, by density', dir: '<b>Densest</b> gets gold', items: [['Osmium', '22.6 g/cm³'], ['Gold', '19.3 g/cm³'], ['Lead', '11.3 g/cm³'], ['Iron', '7.9 g/cm³'], ['Aluminium', '2.7 g/cm³']] },
+  { q: 'Liquids, by pH', dir: '<b>Most acidic</b> gets gold', items: [['Battery acid', '~0.8'], ['Lemon juice', '~2'], ['Black coffee', '~5'], ['Pure water', '7'], ['Bleach', '~12.5']] },
+  { q: 'Sounds, by loudness', dir: '<b>Loudest</b> gets gold', items: [['Jet engine (30 m)', '~140 dB'], ['Rock concert', '~110 dB'], ['Busy traffic', '~85 dB'], ['Conversation', '~60 dB'], ['Whisper', '~30 dB']] },
+  { q: 'Things, by temperature', dir: '<b>Hottest</b> gets gold', items: [["Sun's surface", '~5,500 °C'], ['Lava', '~1,100 °C'], ['Pizza oven', '~400 °C'], ['Boiling water', '100 °C'], ['Human body', '37 °C']] },
+  { q: 'Colours of light, by wavelength', dir: '<b>Longest</b> gets gold', items: [['Red', '~700 nm'], ['Orange', '~610 nm'], ['Yellow', '~580 nm'], ['Green', '~530 nm'], ['Violet', '~400 nm']] },
+  { q: 'Things, by weight', dir: '<b>Heaviest</b> gets gold', items: [['Boeing 747 (empty)', '~180,000 kg'], ['African elephant', '~6,000 kg'], ['Car', '~1,500 kg'], ['Bowling ball', '~7 kg'], ['Smartphone', '~0.2 kg']] },
+  { q: 'Fast things, part two', dir: '<b>Fastest</b> gets gold', items: [['Light', '~1.08 bn km/h'], ['The ISS', '~28,000 km/h'], ['Concorde', '~2,180 km/h'], ['Formula 1 car', '~370 km/h'], ['Sloth', '~0.27 km/h']] },
+  { q: 'Units of length', dir: '<b>Longest</b> gets gold', items: [['Light-year', '~9.46 trillion km'], ['Astronomical unit', '~150m km'], ['Mile', '1.609 km'], ['Kilometre', '1 km'], ['Foot', '0.3048 m']] },
+  { q: 'Tall things', dir: '<b>Tallest</b> gets gold', items: [['London Eye', '135 m'], ['Tallest tree', '~116 m'], ['Giraffe', '~5.5 m'], ['Basketball hoop', '3.05 m'], ['Average adult', '~1.7 m']] },
+  { q: 'Long things', dir: '<b>Longest</b> gets gold', items: [['Great Wall of China', '~21,000 km'], ['Trans-Siberian Rail', '~9,289 km'], ['River Nile', '~6,650 km'], ['Panama Canal', '~82 km'], ['Blue whale', '~30 m']] },
+  { q: 'Things, by how long they take', dir: '<b>Longest</b> gets gold', items: [['Earth around the Sun', '~365 days'], ['Moon around Earth', '~27 days'], ['ISS around Earth', '~92 min'], ['Sunlight to Earth', '~8 min'], ['Moonlight to Earth', '~1.3 s']] },
+  { q: 'Things, by age', dir: '<b>Oldest</b> gets gold', items: [['The universe', '~13.8 bn years'], ['Earth', '~4.5 bn years'], ['Dinosaur extinction', '~66m years ago'], ['Homo sapiens', '~300,000 years'], ['Great Pyramid', '~4,500 years']] },
+  { q: 'Big numbers', dir: '<b>Biggest</b> gets gold', items: [['Milky Way stars', '~100–400 bn'], ['Neurons in a brain', '~86 bn'], ['People on Earth', '~8.2 bn'], ['Days in a year', '365'], ['UN member states', '193']] },
+  // ---- culture ----
+  { q: 'Harry Potter books, by length', dir: '<b>Longest</b> gets gold', items: [['Order of the Phoenix', '~257k words'], ['Deathly Hallows', '~198k words'], ['Goblet of Fire', '~191k words'], ['Half-Blood Prince', '~169k words'], ["Philosopher's Stone", '~77k words']] },
+  { q: 'Pixar films, by release year', dir: '<b>Oldest</b> gets gold', items: [['Toy Story', '1995'], ['Finding Nemo', '2003'], ['Up', '2009'], ['Inside Out', '2015'], ['Soul', '2020']] },
+  { q: 'Marvel films, by release year', dir: '<b>Oldest</b> gets gold', items: [['Iron Man', '2008'], ['The Avengers', '2012'], ['Guardians of the Galaxy', '2014'], ['Black Panther', '2018'], ['Avengers: Endgame', '2019']] },
+  { q: 'Disney animated films, by year', dir: '<b>Oldest</b> gets gold', items: [['Snow White', '1937'], ['Cinderella', '1950'], ['The Little Mermaid', '1989'], ['The Lion King', '1994'], ['Frozen', '2013']] },
+  { q: 'TV shows, by first episode', dir: '<b>Oldest</b> gets gold', items: [['The Simpsons', '1989'], ['Friends', '1994'], ['The Office (US)', '2005'], ['Breaking Bad', '2008'], ['Stranger Things', '2016']] },
+  { q: 'Artists, by debut studio album', dir: '<b>Earliest</b> gets gold', items: [['The Beatles', '1963'], ['Queen', '1973'], ['Beyoncé (solo)', '2003'], ['Taylor Swift', '2006'], ['Billie Eilish', '2019']] },
+  { q: 'Game consoles, by release year', dir: '<b>Oldest</b> gets gold', items: [['Atari 2600', '1977'], ['Game Boy', '1989'], ['PlayStation', '1994'], ['Wii', '2006'], ['Nintendo Switch', '2017']] },
+  { q: 'Movies, by runtime', dir: '<b>Longest</b> gets gold', items: [['Return of the King', '201 min'], ['Titanic', '194 min'], ['Avengers: Endgame', '181 min'], ['Inception', '148 min'], ['Toy Story', '81 min']] },
+  { q: 'Bollywood films, by release year', dir: '<b>Oldest</b> gets gold', items: [['Mother India', '1957'], ['Sholay', '1975'], ['DDLJ', '1995'], ['3 Idiots', '2009'], ['Dangal', '2016']] },
+  { q: 'Paintings, by year', dir: '<b>Oldest</b> gets gold', items: [['Mona Lisa', '~1503'], ['The Night Watch', '1642'], ['The Starry Night', '1889'], ['The Scream', '1893'], ['Guernica', '1937']] },
+  { q: 'Famous people, by birth year', dir: '<b>Earliest</b> gets gold', items: [['Shakespeare', '1564'], ['Isaac Newton', '1643'], ['Mozart', '1756'], ['Albert Einstein', '1879'], ['Steve Jobs', '1955']] },
+  { q: 'History, by year', dir: '<b>Earliest</b> gets gold', items: [['Magna Carta', '1215'], ['Columbus sails west', '1492'], ['French Revolution', '1789'], ['World War I begins', '1914'], ['Berlin Wall falls', '1989']] },
+  { q: 'Ancient wonders, by age', dir: '<b>Oldest</b> gets gold', items: [['Stonehenge', '~3000 BC'], ['Great Pyramid', '~2560 BC'], ['Colosseum', 'AD 80'], ['Machu Picchu', '~1450'], ['Taj Mahal', '~1653']] },
+  { q: 'Everyday inventions, by year', dir: '<b>Oldest</b> gets gold', items: [['Toilet paper (sold)', '1857'], ['Light bulb', '1879'], ['Zip', '1913'], ['Microwave oven', '~1946'], ['Post-it Note', '1980']] },
+  { q: 'Musical instruments, by number of strings', dir: '<b>Most strings</b> gets gold', items: [['Piano', '~230'], ['Concert harp', '47'], ['Sitar', '~18–21'], ['12-string guitar', '12'], ['Violin', '4']] },
+  { q: 'Alphabets, by number of letters', dir: '<b>Most letters</b> gets gold', items: [['Russian', '33'], ['English', '26'], ['Greek', '24'], ['Hebrew', '22'], ['Hawaiian', '13']] },
+  { q: 'Languages, by native speakers', dir: '<b>Most speakers</b> gets gold', items: [['Mandarin', '~940m'], ['Spanish', '~485m'], ['English', '~380m'], ['Bengali', '~240m'], ['Japanese', '~123m']] },
+  { q: 'Ships, by length', dir: '<b>Longest</b> gets gold', items: [['Icon of the Seas', '~365 m'], ['Titanic', '~269 m'], ['Cutty Sark', '~85 m'], ['Mayflower', '~30 m'], ['Kayak', '~5 m']] },
+  // ---- sport ----
+  { q: 'Balls, by diameter', dir: '<b>Biggest</b> gets gold', items: [['Basketball', '~24 cm'], ['Football', '~22 cm'], ['Tennis ball', '~6.7 cm'], ['Golf ball', '~4.3 cm'], ['Ping pong ball', '4 cm']] },
+  { q: 'Playing areas, by length', dir: '<b>Longest</b> gets gold', items: [['Football pitch', '~105 m'], ['Ice hockey rink', '~61 m'], ['Basketball court', '28 m'], ['Tennis court', '23.8 m'], ['Cricket pitch', '20.1 m']] },
+  { q: 'Sports, by players per team on the field', dir: '<b>Most players</b> gets gold', items: [['Rugby union', '15'], ['Football', '11'], ['Baseball', '9'], ['Volleyball', '6'], ['Basketball', '5']] },
+  { q: 'Cricket formats, by length', dir: '<b>Longest</b> gets gold', items: [['Test match', 'up to 5 days'], ['ODI', '50 overs'], ['T20', '20 overs'], ['The Hundred', '100 balls'], ['T10', '10 overs']] },
+  // ---- food ----
+  { q: 'Chillies, by heat', dir: '<b>Hottest</b> gets gold', items: [['Carolina Reaper', '~1.6m SHU'], ['Ghost pepper', '~1m SHU'], ['Habanero', '~100k–350k SHU'], ['Jalapeño', '~2.5k–8k SHU'], ['Bell pepper', '0 SHU']] },
+  { q: 'Drinks, by caffeine', dir: '<b>Most caffeine</b> gets gold', items: [['Brewed coffee', '~95 mg / cup'], ['Red Bull', '~80 mg / 250 ml'], ['Espresso shot', '~63 mg'], ['Coca-Cola', '~34 mg / can'], ['Decaf coffee', '~2 mg / cup']] },
+  { q: 'Fruit, by sugar per 100 g', dir: '<b>Sweetest</b> gets gold', items: [['Dates', '~66 g'], ['Grapes', '~16 g'], ['Banana', '~12 g'], ['Apple', '~10 g'], ['Strawberries', '~5 g']] },
+  { q: 'Foods, by protein per 100 g', dir: '<b>Most protein</b> gets gold', items: [['Chicken breast', '~31 g'], ['Peanuts', '~26 g'], ['Eggs', '~13 g'], ['Lentils (cooked)', '~9 g'], ['Apple', '~0.3 g']] },
+  { q: 'Foods, by water content', dir: '<b>Most water</b> gets gold', items: [['Cucumber', '~96%'], ['Watermelon', '~92%'], ['Apple', '~86%'], ['Banana', '~75%'], ['Bread', '~36%']] },
+  { q: 'Coffee orders, by amount of milk', dir: '<b>Least milk</b> gets gold', items: [['Espresso', 'none'], ['Macchiato', 'a dash'], ['Cortado', '~1:1'], ['Flat white', '~1:2'], ['Latte', '~1:3 or more']] },
+  // ---- tech & data ----
+  { q: 'Programming languages, by year', dir: '<b>Oldest</b> gets gold', items: [['C', '1972'], ['SQL', '1974'], ['Python', '1991'], ['Java', '1995'], ['Swift', '2014']] },
+  { q: 'Data tools, by release year', dir: '<b>Oldest</b> gets gold', items: [['Excel', '1985'], ['MySQL', '1995'], ['Tableau', '2003'], ['Google Sheets', '2006'], ['Power BI', '2015']] },
+  { q: 'Storage, by capacity', dir: '<b>Biggest</b> gets gold', items: [['1 TB SSD', '1,000 GB'], ['Blu-ray', '25 GB'], ['DVD', '4.7 GB'], ['CD', '700 MB'], ['Floppy disk', '1.44 MB']] },
+  { q: 'Websites, by launch year', dir: '<b>Oldest</b> gets gold', items: [['Amazon', '1995'], ['Hotmail', '1996'], ['LinkedIn', '2003'], ['Reddit', '2005'], ['Twitter', '2006']] },
+  { q: 'Internet firsts, by year', dir: '<b>Earliest</b> gets gold', items: [['First text message', '1992'], ['Google Search', '1998'], ['Wikipedia', '2001'], ['WhatsApp', '2009'], ['ChatGPT', '2022']] },
+  { q: 'Famous numbers in tech', dir: '<b>Biggest</b> gets gold', items: [['Lines in 1080p', '1080'], ['HTTP "Not Found"', '404'], ['Localhost 127.0.0.1', '127'], ['Chessboard squares', '64'], ['Bits in a byte', '8']] },
+  { q: 'Apple products, by launch year', dir: '<b>Oldest</b> gets gold', items: [['Macintosh', '1984'], ['iPod', '2001'], ['iPhone', '2007'], ['iPad', '2010'], ['Apple Watch', '2015']] },
+  { q: 'Google products, by launch year', dir: '<b>Oldest</b> gets gold', items: [['Google Search', '1998'], ['Gmail', '2004'], ['Google Maps', '2005'], ['Chrome', '2008'], ['Pixel phone', '2016']] },
+  { q: 'Companies, by year founded', dir: '<b>Oldest</b> gets gold', items: [["Levi's", '1853'], ['Nintendo', '1889'], ['Ford', '1903'], ['Toyota', '1937'], ['Samsung', '1938']] },
 ];
 const MAX = 3;
+// daily rotation: puzzle #1 stays first, the rest are shuffled once (fixed seed) so similar topics don't cluster
+const ORDER = (() => {
+  const rest = [...Array(PUZZLES.length).keys()].slice(1);
+  let s = 20261003;
+  const rand = () => (s = (s * 16807) % 2147483647) / 2147483647;
+  for (let i = rest.length - 1; i > 0; i--) { const j = Math.floor(rand() * (i + 1)); [rest[i], rest[j]] = [rest[j], rest[i]]; }
+  return [0, ...rest];
+})();
 const EPOCH = Date.UTC(2026, 9, 3);
 const $ = id => document.getElementById(id);
 const mod = (a, n) => ((a % n) + n) % n;
@@ -334,7 +431,8 @@ function moveTo(p, slot, hop = 0, delay = 0) {
 function spin(p, delay, onHalf) { p.userData.spin = { t: -delay, dur: .6, onHalf, fired: false }; }
 let last = 0, clock = 0;
 function frame(now) {
-  const dt = Math.min(.05, (now - last) / 1000 || 0); last = now; clock += dt;
+  // large steps allowed so animations finish on time even at low frame rates
+  const dt = Math.min(.25, (now - last) / 1000 || 0); last = now; clock += dt;
   group.rotation.set(0, 0, 0);
   for (const p of pills) {
     const u = p.userData;
@@ -391,7 +489,7 @@ function shuffled(n, seed) {
 }
 const judge = (item, pos) => item === pos ? 'h' : item < pos ? 'u' : 'd';
 function newGame(num, practice) {
-  const p = PUZZLES[mod(num - 1, PUZZLES.length)];
+  const p = PUZZLES[practice ? mod(num - 1, PUZZLES.length) : ORDER[mod(num - 1, PUZZLES.length)]];
   const saved = practice ? null : load('sorted3-day-' + num, null);
   G = saved || { num, order: shuffled(5, num + (practice ? 7919 : 0)), guesses: [], lastOrder: null, done: false, won: false };
   G.practice = practice; G.p = p; selected = null;
@@ -530,7 +628,7 @@ $('shareBtn').addEventListener('click', () => {
 $('practiceBtn').addEventListener('click', () => {
   $('result').close();
   const today = mod(todayNum() - 1, PUZZLES.length);
-  let n; do { n = Math.floor(Math.random() * PUZZLES.length) + 1; } while (mod(n - 1, PUZZLES.length) === today);
+  let n; do { n = Math.floor(Math.random() * PUZZLES.length) + 1; } while (n - 1 === ORDER[today]);
   newGame(n, true);
 });
 function toast(t) { const el = document.createElement('div'); el.className = 'toast'; el.textContent = t; document.body.append(el); setTimeout(() => el.remove(), 1800); }
