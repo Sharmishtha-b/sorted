@@ -2,7 +2,7 @@
 
 A daily ranking puzzle. Every day you get one category and five entries, like *Planets, by diameter* or *Movies, by release year*. Put them in the right order in three tries.
 
-**[Play it here →](https://YOUR-USERNAME.github.io/sorted/)**
+**[Play it here →](https://sharmishtha-b.github.io/sorted/)**
 
 ## How to play
 
